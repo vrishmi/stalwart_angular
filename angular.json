@@ -123,7 +123,6 @@
       }
     }
   },
-  "defaultProject": "starlwart",
   "cli": {
     "analytics": "e7f21f59-f004-4812-8fa0-0074307473de"
   }
