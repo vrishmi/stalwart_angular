@@ -1,0 +1,51 @@
+<br><br><br><br><div class="content-wrapper">
+    <div class="page-header">
+      <h3 class="page-title">
+        <span class="page-title-icon bg-gradient-primary text-white me-2">
+          <i class="mdi mdi-account-multiple"></i>
+        </span> Manage Users
+      </h3>
+    </div>
+  
+    <div class="row">
+      <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title float-left">List User</h4>
+  
+           <!-- <table class="table table-bordered" id="listuser">-->
+              <table   *ngIf="users.length > 0 " datatable="ng" id="listuser">
+              <thead>
+                <tr>
+                  <th>FirstName</th>
+                  <th>LastName</th>
+                  <th>Email</th>
+                  <th>Role</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+  
+              <tbody>
+                <tr *ngFor="let u of users">
+                  <td>{{u.firstName}}</td>
+                  <td>{{u.lastName}}</td>
+                  <td>{{u.email}}</td>
+                  <td>{{u.Role.RoleName}}</td>
+                  <td><i class="mdi mdi-delete-forever-outline text-danger mypointer" title="Delete" (click)="deleteUser(u._id)"   ></i></td>
+                </tr>
+              </tbody>
+  
+            </table>
+            <br><br>
+            <a routerLink="/admin/adduser">AddUser</a>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+    <br><br><BR><br><br>
+    <br><br><BR><br><br>
+    <br><br><BR><br><br>
+  </div>
+  
+ 

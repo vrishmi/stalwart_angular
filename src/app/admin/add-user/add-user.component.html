@@ -1,0 +1,37 @@
+<br><br><div class="content-wrapper">
+  <div class="page-header">
+    <h3 class="page-title">
+      <span class="page-title-icon bg-gradient-primary text-white me-2">
+        <i class="mdi mdi-account-multiple"></i>
+      </span> Manage Users
+    </h3>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title float-left">Add New User</h4>
+          
+          FirstName : <input type="text" [(ngModel)]="firstName" > {{firstNameError}}  <br><Br>
+              LastName : <input type="text" [(ngModel)]="lastName" > {{lastNameError}}  <br><Br>
+              Email : <input type="text" [(ngModel)]="email"> {{emailError}}<br><Br>
+              Password : <input type="password" [(ngModel)]="password" >{{passwordError}}<br><Br>
+              
+              Role : <select [(ngModel)]="Role">
+                      <option>Select Role</option>
+                      <option *ngFor="let r of Roles"  value="{{r._id}}">{{r.RoleName}}</option>
+                    </select>
+                    <button (click)="saveUser()">Add User</button>
+                    <br><br>
+          <a routerLink="/admin/listusers">List User</a>  
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <br><br><BR><br><br>
+    <br><br><BR><br><br>
+      <br><br><BR><br><br>
+</div>
