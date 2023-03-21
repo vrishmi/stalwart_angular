@@ -1,0 +1,38 @@
+<br><br><br><div class="content-wrapper">
+    <div class="page-header">
+      <h3 class="page-title">
+        <span class="page-title-icon bg-gradient-primary text-white me-2">
+          <i class="mdi mdi-account-multiple"></i>
+        </span> Manage Project
+      </h3>
+  
+    </div>
+  
+    <div class="row">
+      <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title float-left">Add New Project</h4><br><br>
+                ProjectTitle :<input type="text" class="form-control" [(ngModel)]="ProjectTitle"><span class="error">{{ProjectTitleError}}</span><br><br>
+                Technology : <input type="text" class="form-control" [(ngModel)]="Technology"><span class="error">{{TechnologyError}} </span> <br><br>
+                FrontEnd : <input type="text" class="form-control" [(ngModel)]="FrontEnd"> <span class="error"> {{FrontEndError}}</span> <br><br>
+                BackEnd : <input type="text" class="form-control" [(ngModel)]="BackEnd"><span class="error">{{BackEndError}}</span> <br><br>
+                StartDate : <input type="date" class="form-control" [(ngModel)]="StartDate"><span class="error">{{StartDateError}}</span><br><br>
+                CompletionDate : <input type="date" class="form-control" [(ngModel)]="CompletionDate" ><span class="error">{{CompletionDateError}}</span><br><br>
+                EstimatedHour : <input type="number" class="form-control" [(ngModel)]="EstimatedHour" ><span class="error">{{EstimatedHourError}}</span><br><br>
+                TotalUtilizedHour :<input type="number" class="form-control" [(ngModel)]="TotalUtilizedHour"><span class="error">{{TotalUtilizedHourError}}</span><br><br>
+                Status : <select [(ngModel)]="Status" class="form-control">
+                  <option value="-1">Select Status</option>
+                  <option *ngFor="let r of Statuses"  value="{{r._id}}">{{r.statusName}}</option></select><span class="error">{{StatusError}}</span>
+               <br><br>
+                      <button class="btn btn-block btn-lg btn-gradient-primary mt-4" (click)="saveProject()">Submit</button>
+                      <br><br>
+            <a routerLink="/admin/listprojects"><button class="btn btn-block btn-lg btn-gradient-secondary mt-4">Go back</button> </a>  
+          </div>
+        </div>
+      </div>
+    </div>
+    <br><br><BR><br><br>
+      <br><br><BR><br><br>
+        <br><br><BR><br><br>
+</div>

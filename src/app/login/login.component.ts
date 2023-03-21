@@ -37,6 +37,7 @@ export class LoginComponent implements OnInit {
       else
       {
         console.log(resp.data);
+        localStorage.setItem("userId",resp.data._id)
         //console.log(resp);
         if(resp.data.Role.RoleName=="Admin")
         {

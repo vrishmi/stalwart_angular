@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Window } from 'selenium-webdriver';
 import { UserService } from '../service/user.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { UserService } from '../service/user.service';
   styleUrls: ['./listusers.component.css']
 })
 export class ListusersComponent implements OnInit {
-
+firstName=""
   constructor(private userService: UserService) { }
   users: Array<any> = []
   ngOnInit(): void {
@@ -18,11 +19,17 @@ export class ListusersComponent implements OnInit {
       
     })
   }
-  deleteUser(userId:any){
-    alert("delete call..."+userId)
+  deleteUser(userId:any,firstName:string)
+  {
+    /*alert("delete call..."+userId)
     this.userService.deleteUserApi(userId).subscribe(resp=>{
-        console.log(resp);
-        
-    })
+        console.log(resp);*/
+      if(confirm("Are you sure you want to delete "+firstName))
+      {
+          this.userService.deleteUserApi(userId).subscribe(resp=>{
+          console.log(resp);
+          location.reload();
+        })
+      }
   }
 }

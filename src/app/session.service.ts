@@ -10,8 +10,8 @@ export class SessionService {
   constructor(private http:HttpClient) { 
   }
   signupApi(user: any) :Observable<any> {
-    console.log("SignupApi Call -> ");
-    console.log(user);
+    /*console.log("SignupApi Call -> ");
+    console.log(user);*/
    return this.http.post("http://localhost:9091/user",user)
   }
   loginApi(data:any):Observable<any>

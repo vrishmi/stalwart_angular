@@ -1,0 +1,72 @@
+<br><br><br><div class="content-wrapper">
+    <div class="page-header">
+      <h3 class="page-title">
+        <span class="page-title-icon bg-gradient-primary text-white me-2">
+          <i class="mdi mdi-account-multiple"></i>
+        </span> Status Report
+      </h3>
+  
+    </div>
+  
+    <div class="row">
+      <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            
+            Status: <select [(ngModel)]="Status" class="form-control" (change)="getProject()">
+              
+                  <option value="-1">Select Status</option>
+                  <option *ngFor="let r of Statuses"  value="{{r._id}}">{{r.statusName}}</option></select>
+               <!-- <br><br> -->
+
+            <!-- Project: <select [(ngModel)]="Project" class="form-control">
+                <option value="-1">Select Project</option>
+                <option *ngFor="let m of Projects"  value="{{m._id}}">{{m.ProjectTitle}}</option></select><span class="error">{{ModuleError}}</span>
+              <br><br>  -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+          <div class="row">
+                <div class="col-md-12 grid-margin stretch-card">
+                  <div class="card">
+                    <div class="card-body">
+              <table   *ngIf="Projects.length > 0 " datatable="ng" [dtOptions]="dtOptions" id="listuser">
+                <thead>
+                  <tr>
+                    <th>ProjectTitle</th>
+                    <th>Technology</th>
+                    <th>FrontEnd</th>
+                    <th>BackEnd</th>
+                    <th>Start
+                        Date</th>
+                    <th>Completion 
+                            Date</th>
+                    <th>Estimated
+                      Hour</th>
+                    <th>TotalUtilized
+                      Hour</th>
+                  </tr>
+                </thead>
+    
+                <tbody>
+                  <tr *ngFor="let u of Projects">
+                    <td>{{u.ProjectTitle}}</td>
+                    <td>{{u.Technology}}</td>
+                    <td>{{u.FrontEnd}}</td>
+                    <td>{{u.BackEnd}}</td>
+                    <td>{{u.StartDate}}</td>
+                    <td>{{u.CompletionDate}}</td>
+                    <td>{{u.EstimatedHour}}</td>
+                    <td>{{u.TotalUtilizedHour}}</td>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+        </div>          
+    </div>
+    <br><br><BR><br><br>
+      <br><br><BR><br><br>
+        <br><br><BR><br><br>
+</div>

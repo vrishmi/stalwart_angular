@@ -11,7 +11,7 @@
       <div class="col-md-12 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title float-left">List User</h4>
+            <h4 class="card-title float-left">List Users</h4>
   
            <!-- <table class="table table-bordered" id="listuser">-->
               <table   *ngIf="users.length > 0 " datatable="ng" id="listuser">
@@ -31,13 +31,16 @@
                   <td>{{u.lastName}}</td>
                   <td>{{u.email}}</td>
                   <td>{{u.Role.RoleName}}</td>
-                  <td><i class="mdi mdi-delete-forever-outline text-danger mypointer" title="Delete" (click)="deleteUser(u._id)"   ></i></td>
+                  <td><i class="mdi mdi-delete-forever-outline text-danger mypointer" title="Delete" (click)="deleteUser(u._id,u.firstName)"></i>|
+
+                    <a routerLink="/admin/edituser/{{u._id}}"><i class="mdi mdi-lead-pencil text-danger mypointer" ></i></a> </td>
                 </tr>
               </tbody>
   
             </table>
             <br><br>
-            <a routerLink="/admin/adduser">AddUser</a>
+            <!--<a routerLink="/admin/adduser">AddUser</a>-->
+            <a routerLink="/admin/adduser"><button class="btn btn-block btn-lg btn-gradient-primary mt-4">Add User</button></a>
           </div>
         </div>
       </div>

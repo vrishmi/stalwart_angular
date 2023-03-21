@@ -1,0 +1,43 @@
+<br><br><br><div class="content-wrapper">
+    <div class="page-header">
+      <h3 class="page-title">
+        <span class="page-title-icon bg-gradient-primary text-white me-2">
+          <i class="mdi mdi-account-multiple"></i>
+        </span> Manage Task
+      </h3>
+  
+    </div>
+  
+    <div class="row">
+      <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title float-left">Add New Task</h4><br><br>
+            Project: <select [(ngModel)]="Project" class="form-control" (change)="getModule()">
+              <option value="-1">Select Project</option>
+              <option *ngFor="let p of Projects"  value="{{p._id}}">{{p.ProjectTitle}}</option></select><span class="error">{{ProjectError}}</span>
+            <br><br>   
+             Module : <select [(ngModel)]="Module" class="form-control">
+              <option value="-1">Select Module</option>
+              <option *ngFor="let m of Modules"  value="{{m._id}}">{{m.module_name}}</option></select><span class="error">{{ModuleError}}</span>
+            <br><br>  
+            TaskTitle :<input type="text" class="form-control" [(ngModel)]="TaskTitle"><span class="error">{{TaskTitleError}}</span><br><br>
+            StartDate : <input type="date" class="form-control" [(ngModel)]="StartDate"><span class="error">{{StartDateError}} </span> <br><br>
+            CompletionDate : <input type="date" class="form-control" [(ngModel)]="CompletionDate" ><span class="error">{{CompletionDateError}}</span><br><br>
+            EstimatedHour : <input type="number" class="form-control" [(ngModel)]="EstimatedHour" ><span class="error">{{EstimatedHourError}}</span><br><br>
+            UtilizedHour :<input type="number" class="form-control" [(ngModel)]="UtilizedHour"><span class="error">{{UtilizedHourError}}</span><br><br>
+                       
+            Status : <select [(ngModel)]="Status" class="form-control">
+                  <option value="-1">Select Status</option>
+                  <option *ngFor="let r of Statuses"  value="{{r._id}}">{{r.statusName}}</option></select><span class="error">{{StatusError}}</span>
+               <br><br>
+                      <button class="btn btn-block btn-lg btn-gradient-primary mt-4" (click)="saveTask()">Submit</button>
+                      <br><br> 
+          </div>
+        </div>
+      </div>
+    </div>
+    <br><br><BR><br><br>
+      <br><br><BR><br><br>
+        <br><br><BR><br><br>
+</div>

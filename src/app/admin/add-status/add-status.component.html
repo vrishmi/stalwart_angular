@@ -1,0 +1,27 @@
+<br><br><br><div class="content-wrapper">
+    <div class="page-header">
+      <h3 class="page-title">
+        <span class="page-title-icon bg-gradient-primary text-white me-2">
+          <i class="mdi mdi-account-multiple"></i>
+        </span> Manage Status
+      </h3>
+  
+    </div>
+  
+    <div class="row">
+      <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title float-left">Add New Status</h4><br><br>
+                Status Name :<input type="text" class="form-control" [(ngModel)]="statusName"><span class="error">{{StatusNameError}}</span>
+                <br><button class="btn btn-block btn-lg btn-gradient-primary mt-4" (click)="saveStatus()">Submit</button>
+                <br><br>
+            <a routerLink="/admin/liststatus"><button class="btn btn-block btn-lg btn-gradient-secondary mt-4">Go back</button> </a>  
+          </div>
+        </div>
+      </div>
+    </div>
+    <br><br><BR><br><br>
+      <br><br><BR><br><br>
+        <br><br><BR><br><br>
+</div>

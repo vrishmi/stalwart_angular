@@ -1,0 +1,74 @@
+<br><br><br><br><div class="content-wrapper">
+    <div class="page-header">
+      <h3 class="page-title">
+        <span class="page-title-icon bg-gradient-primary text-white me-2">
+          <i class="mdi mdi-account-multiple"></i>
+        </span> Manage Project
+      </h3>
+    </div>
+  
+    <div class="row">
+      <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title float-left">Edit Project</h4>
+  
+            <div class="form-group">
+                <input type="text" class="form-control form-control-lg" id="exampleInputEmail1"
+                   placeholder="Technology" [(ngModel)]="Technology"> <span style="color: red;">{{TechnologyError}}</span>
+            </div>
+            
+            <div class="form-group">
+                <input type="text" class="form-control form-control-lg" id="exampleInputEmail1"
+                   placeholder="ProjectTitle" [(ngModel)]="ProjectTitle"> <span style="color: red;">{{ProjectTitleError}}</span>
+             </div>
+
+             <div class="form-group">
+                <input type="text" class="form-control form-control-lg" id="exampleInputEmail1"
+                   placeholder="FrontEnd" [(ngModel)]="FrontEnd"> <span style="color: red;">{{FrontEndError}}</span>
+             </div>
+             
+             <div class="form-group">
+                <input type="text" class="form-control form-control-lg" id="exampleInputEmail1"
+                   placeholder="BackEnd" [(ngModel)]="BackEnd"> <span style="color: red;">{{BackEndError}}</span>
+             </div>
+
+             <div class="form-group">
+                <input type="date" class="form-control form-control-lg" id="exampleInputEmail1"
+                   placeholder="StartDate" [(ngModel)]="StartDate"> {{StartDateError}}
+             </div>
+
+             <div class="form-group">
+                <input type="date" class="form-control form-control-lg" id="exampleInputEmail1"
+                   placeholder="CompletionDate" [(ngModel)]="CompletionDate"> {{CompletionDateError}}
+             </div>
+
+             <div class="form-group">
+                <input type="number" class="form-control form-control-lg" id="exampleInputEmail1"
+                   placeholder="EstimatedHour" [(ngModel)]="EstimatedHour"> {{EstimatedHourError}}
+             </div>
+
+             <div class="form-group">
+                <input type="number" class="form-control form-control-lg" id="exampleInputEmail1"
+                   placeholder="TotalUtilizedHour" [(ngModel)]="TotalUtilizedHour"> {{TotalUtilizedHourError}}
+             </div>
+
+             <div class="form-group">
+                  Status:<br><br><select [(ngModel)]="Status" class="form-control">
+                  <option>Select Status</option>
+                  <option *ngFor="let s of Statuses"  value="{{s._id}}">{{s.statusName}}</option>
+                </select><br>
+             </div>
+            <button class="btn btn-success" (click)="updateProject()">Update</button>
+            <br><br>
+            
+          </div>
+        </div>
+      </div>
+  
+    </div>
+    <br><br><BR><br><br>
+    <br><br><BR><br><br>
+    <br><br><BR><br><br>
+  </div>
+  

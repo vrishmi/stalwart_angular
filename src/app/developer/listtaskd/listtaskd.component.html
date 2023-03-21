@@ -1,0 +1,59 @@
+<br><br><br><div class="content-wrapper">
+    <div class="page-header">
+      <h3 class="page-title">
+        <span class="page-title-icon bg-gradient-primary text-white me-2">
+          <i class="mdi mdi-account-multiple"></i>
+        </span> Manage Task
+      </h3>
+    </div>
+  
+    <div class="row">
+      <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title float-left">List Task</h4>
+  
+         
+             <table   *ngIf="task.length > 0 " datatable="ng" >
+              <thead>
+                <tr>
+                    <th>TaskTitle</th>
+                    <th>StartDate</th>
+                    <th>CompletionDate</th>
+                    <th>EstimatedHour</th>
+                    <th>TotalUtilizedHour</th>
+                    <th>Module</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+              </thead>
+  
+              <tbody>
+                <tr *ngFor="let u of task">
+                    <td>{{u.TaskTitle}}</td>
+                    <td>{{u.StartDate}}</td>
+                    <td>{{u.CompletionDate}}</td>
+                    <td>{{u.EstimatedHour}}</td>
+                    <td>{{u.UtilizedHour}}</td>
+                    <td>{{u.Module.module_name}}</td>
+                    <td>{{u.Status.statusName}}</td>
+
+                  <td>
+                    <a routerLink="/developer/edittask/{{u._id}}"><i class="mdi mdi-lead-pencil text-danger mypointer" title="Edit" ></i></a> 
+                  </td>
+                </tr>
+              </tbody>
+  
+            </table>
+            <br><br>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+    <br><br><BR><br><br>
+    <br><br><BR><br><br>
+    <br><br><BR><br><br>
+  </div>
+  
+ 

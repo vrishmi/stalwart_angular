@@ -1,0 +1,35 @@
+<br><br><br><div class="content-wrapper">
+    <div class="page-header">
+      <h3 class="page-title">
+        <span class="page-title-icon bg-gradient-primary text-white me-2">
+          <i class="mdi mdi-account-multiple"></i>
+        </span> Manage Module
+      </h3>
+  
+    </div>
+  
+    <div class="row">
+      <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title float-left">Add New Module</h4><br><br>
+              Module Name :<input type="text" class="form-control" [(ngModel)]="module_name"><span class="error">{{ModuleNameError}}</span><br><br>
+                Project : <select [(ngModel)]="Project" class="form-control">
+                  <option value="-1">Select Project</option>
+                  <option *ngFor="let p of Projects"  value="{{p._id}}">{{p.ProjectTitle}}</option></select><span class="error">{{ProjectError}}</span>
+               <br><br>              
+                Status : <select [(ngModel)]="Status" class="form-control">
+                  <option value="-1">Select Status</option>
+                  <option *ngFor="let r of Statuses"  value="{{r._id}}">{{r.statusName}}</option></select><span class="error">{{StatusError}}</span>
+               <br><br>
+                      <button class="btn btn-block btn-lg btn-gradient-primary mt-4" (click)="saveModule()">Submit</button>
+                      <br><br>
+            <!-- <a routerLink="/projectmanager/listmodule"><button class="btn btn-block btn-lg btn-gradient-secondary mt-4">Go back</button> </a>   -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <br><br><BR><br><br>
+      <br><br><BR><br><br>
+        <br><br><BR><br><br>
+</div>

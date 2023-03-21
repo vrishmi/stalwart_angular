@@ -1,4 +1,4 @@
-<br><br><div class="content-wrapper">
+<br><br><br><div class="content-wrapper">
   <div class="page-header">
     <h3 class="page-title">
       <span class="page-title-icon bg-gradient-primary text-white me-2">
@@ -9,23 +9,23 @@
   </div>
 
   <div class="row">
-    <div class="col-md-12 grid-margin stretch-card">
+    <div class="col-md-6 grid-margin stretch-card">
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title float-left">Add New User</h4>
+          <h4 class="card-title float-left">Add New User</h4><br><br>
           
-          FirstName : <input type="text" [(ngModel)]="firstName" > {{firstNameError}}  <br><Br>
-              LastName : <input type="text" [(ngModel)]="lastName" > {{lastNameError}}  <br><Br>
-              Email : <input type="text" [(ngModel)]="email"> {{emailError}}<br><Br>
-              Password : <input type="password" [(ngModel)]="password" >{{passwordError}}<br><Br>
+              FirstName : <input type="text" class="form-control" [(ngModel)]="firstName" > <span class="error">{{firstNameError}}</span>  <br><br>
+              LastName : <input type="text" class="form-control" [(ngModel)]="lastName" > <span class="error">{{lastNameError}}</span>  <br><br>
+              Email : <input type="text" class="form-control" [(ngModel)]="email"> <span class="error">{{emailError}}</span><br><br>
+              Password : <input type="password" class="form-control" [(ngModel)]="password" ><span class="error">{{passwordError}}</span><br><br>
               
-              Role : <select [(ngModel)]="Role">
-                      <option>Select Role</option>
+              Role : <select [(ngModel)]="Role" class="form-control">
+                      <option value="-1">Select Role</option>
                       <option *ngFor="let r of Roles"  value="{{r._id}}">{{r.RoleName}}</option>
-                    </select>
-                    <button (click)="saveUser()">Add User</button>
+                    </select><br><br>
+                    <button class="btn btn-block btn-lg btn-gradient-primary mt-4" (click)="saveUser()">Submit</button>
                     <br><br>
-          <a routerLink="/admin/listusers">List User</a>  
+          <a routerLink="/admin/listusers"><button class="btn btn-block btn-lg btn-gradient-secondary mt-4">List users</button> </a>  
         </div>
       </div>
     </div>

@@ -1,0 +1,47 @@
+<br><br><br><div class="content-wrapper">
+    <div class="page-header">
+      <h3 class="page-title">
+        <span class="page-title-icon bg-gradient-primary text-white me-2">
+          <i class="mdi mdi-account-multiple"></i>
+        </span> Assign Task
+      </h3>
+  
+    </div>
+  
+    <div class="row">
+      <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title float-left">Assign Task To Developer</h4><br><br>
+               
+                Project : <select [(ngModel)]="Project" class="form-control" (change)="getModule()">
+                  <option value="-1">Select Project</option>
+                  <option *ngFor="let p of Projects"  value="{{p._id}}">{{p.ProjectTitle}}</option></select>
+               <br><br>  
+               Module : <select [(ngModel)]="Module" class="form-control" (change)="getTask()">
+                <option value="-1">Select Module</option>
+                <option *ngFor="let m of Modules"  value="{{m._id}}">{{m.module_name}}</option></select>
+                <br><br> 
+                Task : <select [(ngModel)]="Task" class="form-control">
+                <option value="-1">Select Task</option>
+                <option *ngFor="let t of Tasks"  value="{{t._id}}">{{t.TaskTitle}}</option></select>
+             <br><br>             
+                User : <select [(ngModel)]="User" class="form-control">
+                  <option value="-1">Select User</option>
+                  <option *ngFor="let r of Users"  value="{{r._id}}">{{r.email}}</option></select>
+               <br><br>
+                isAssign : <select [(ngModel)]="isAssign" class="form-control">
+                  <option value="-1">Select Boolean</option>
+                  <option>true</option>
+                  <option>false</option>
+                </select>
+                      <button class="btn btn-block btn-lg btn-gradient-primary mt-4" (click)="saveTaskUser()">Submit</button>
+                      <br><br>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br><br><BR><br><br>
+      <br><br><BR><br><br>
+        <br><br><BR><br><br>
+</div>
