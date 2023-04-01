@@ -64,6 +64,8 @@ import { DeveloperHeaderComponent } from './developer/developer-header/developer
 import { ListtaskdComponent } from './developer/listtaskd/listtaskd.component';
 import { AssigntaskComponent } from './projectmanager/assigntask/assigntask.component';
 import { EditDtaskComponent } from './developer/edit-dtask/edit-dtask.component';
+import { SpentTimeComponent } from './developer/spent-time/spent-time.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
  
@@ -128,6 +130,8 @@ import { EditDtaskComponent } from './developer/edit-dtask/edit-dtask.component'
     ListtaskdComponent,
     AssigntaskComponent,
     EditDtaskComponent,
+    SpentTimeComponent,
+    ProfileComponent,
     
    
   ],

@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class ProjectmanagerHeaderComponent {
 
+  hidden=true
+
+  constructor() { }
+  execute(){
+    this.hidden=!this.hidden
+  }
+  date=new Date()
+  day= this.date.getDate()
+  month=this.date.getUTCMonth()+1
+  year=this.date.getFullYear()
 }

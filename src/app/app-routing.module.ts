@@ -38,7 +38,6 @@ import { EffortsReportComponent } from './admin/efforts-report/efforts-report.co
 import { ReportComponent } from './projectmanager/report/report.component';
 import { StatusReportComponent } from './projectmanager/status-report/status-report.component';
 import { EffortReportComponent } from './projectmanager/effort-report/effort-report.component';
-import { DeveloperComponent } from './developer/developer.component';
 import { DeveloperLayoutComponent } from './developer/developer-layout/developer-layout.component';
 import { DeveloperDashboardComponent } from './developer/developer-dashboard/developer-dashboard.component';
 import { ListtaskdComponent } from './developer/listtaskd/listtaskd.component';
@@ -46,19 +45,25 @@ import { EditProjectpmComponent } from './projectmanager/edit-projectpm/edit-pro
 import { AssigntaskComponent } from './projectmanager/assigntask/assigntask.component';
 import { EditDtaskComponent } from './developer/edit-dtask/edit-dtask.component';
 import { EditpmTasksComponent } from './projectmanager/editpm-tasks/editpm-tasks.component';
+import { SpentTimeComponent } from './developer/spent-time/spent-time.component';
+import { ProfileComponent } from './profile/profile.component';
+import { LoginGuard } from './login.guard';
+import { LogoutComponent } from './logout/logout.component';
 
 const routes: Routes = [
   {path:"",component:LoginComponent},
+  {path:"login",component:LoginComponent},
   {path:"addrole",component:AddRoleComponent},
   {path:"signup",component:SignupComponent},
-  {path:"logout",component:LoginComponent},
+  {path:"logout",component:LogoutComponent},
+  {path:"profile",component:ProfileComponent},
   {path:"forgetpassword",component:ForgetpasswordComponent},
   {path:"developer",component:DeveloperLayoutComponent,children:[
     {path:"dashboard",component:DeveloperDashboardComponent},
     {path:"listtask",component:ListtaskdComponent},
-    {path:"edittask/:taskId",component:EditDtaskComponent}
-    
-  ]},
+    {path:"edittask/:taskId",component:EditDtaskComponent},
+    {path:"spenttime",component:SpentTimeComponent}
+  ],canActivate:[LoginGuard]},
   {path:"projectmanager",component:ProjectmanagerLayoutComponent,children:[
     {path:"dashboard",component:ProjectmanagerDashboardComponent},
     {path:"listprojects",component:ListProjectuserComponent},
@@ -75,7 +80,7 @@ const routes: Routes = [
     {path:"effortreport",component:EffortReportComponent},
     {path:"assigntask",component:AssigntaskComponent},
     {path:"edittask/:taskId",component:EditpmTasksComponent}
-  ]},
+  ],canActivate:[LoginGuard]},
   {path:"resetpassword",component:ResetpasswordComponent},
   {path:"admin",component:AdminLayoutComponent,children:[
     {path:"dashboard",component:AdminDashboardComponent},
@@ -99,7 +104,7 @@ const routes: Routes = [
     {path:"statusreport",component:ProjectReportComponent},
     {path:"effortsreport",component:EffortsReportComponent}
 
-  ]}
+  ],canActivate:[LoginGuard]}
 ];
 
 @NgModule({

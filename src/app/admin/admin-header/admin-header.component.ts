@@ -7,8 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminHeaderComponent implements OnInit {
 
-  constructor() { }
+  hidden=true
 
+  constructor() { }
+  execute(){
+    this.hidden=!this.hidden
+  }
+  date=new Date()
+  day= this.date.getDate()
+  month=this.date.getUTCMonth()+1
+  year=this.date.getFullYear()
   ngOnInit(): void {
   }
 
