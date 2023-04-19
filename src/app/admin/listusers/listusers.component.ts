@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Window } from 'selenium-webdriver';
 import { UserService } from '../service/user.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-listusers',
@@ -9,7 +10,8 @@ import { UserService } from '../service/user.service';
 })
 export class ListusersComponent implements OnInit {
 firstName=""
-  constructor(private userService: UserService) { }
+hidden=false
+  constructor(private userService: UserService ,private ts:ToastrService) { }
   users: Array<any> = []
   ngOnInit(): void {
 
@@ -27,9 +29,12 @@ firstName=""
       if(confirm("Are you sure you want to delete "+firstName))
       {
           this.userService.deleteUserApi(userId).subscribe(resp=>{
-          console.log(resp);
+              this.ts.success("USER DELETED","",{timeOut:3000})
+            },err=>{
+              this.ts.error("Something went wrong, try again!","",{timeOut:3000})
+            })
           location.reload();
-        })
+      
       }
   }
 }

@@ -33,7 +33,7 @@ ngOnInit(): void {
     {
         this.projectService.deleteProjectApi(projectId).subscribe(resp=>{
         console.log(resp);
-        this.toastrService.success("Project Successfully Deleted","",{timeOut:3000})
+        this.toastrService.success("Project Successfully Deleted","",{timeOut:5000})
         setTimeout(function(){
           location.reload();
         },1000)

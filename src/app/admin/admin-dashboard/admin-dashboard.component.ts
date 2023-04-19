@@ -16,6 +16,7 @@ export class AdminDashboardComponent implements OnInit {
   pipeprojects:Array<any> = []
   overdueprojects:Array<any>=[]
   completedprojects:Array<any>=[]
+  pendingprojects:Array<any>=[]
   //currentYearProjects:Array<any> = []
   totalUti=0
   totalProjects=0
@@ -23,6 +24,7 @@ export class AdminDashboardComponent implements OnInit {
   totalpipeProjects=0
   totaloverdueProjects=0
   totalcompletedProjects=0
+  totalpendingProjects=0
   //currentYearTotalProjects = 0 ;
   ngOnInit(): void {
     this.projectService.getThisMonthProjectApi().subscribe(resp=>{
@@ -57,6 +59,11 @@ export class AdminDashboardComponent implements OnInit {
       this.totaloverdueProjects=this.overdueprojects.length
     })
 
+    this.projectService.getPendingProjectApi().subscribe(resp=>{
+      this.pendingprojects=resp.data
+      //console.log(this.onprojects);
+      this.totalpendingProjects=this.pendingprojects.length
+    })
     this.projectService.getCompeletedProjectApi().subscribe(resp=>{
       this.completedprojects=resp.data
       //console.log(this.onprojects);

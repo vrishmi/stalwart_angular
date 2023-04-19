@@ -49,9 +49,14 @@ import { SpentTimeComponent } from './developer/spent-time/spent-time.component'
 import { ProfileComponent } from './profile/profile.component';
 import { LoginGuard } from './login.guard';
 import { LogoutComponent } from './logout/logout.component';
+import { ProfileDevComponent } from './developer/profile-dev/profile-dev.component';
+import { DevprofileComponent } from './devprofile/devprofile.component';
+import { AdminprofileComponent } from './adminprofile/adminprofile.component';
 
 const routes: Routes = [
   {path:"",component:LoginComponent},
+  {path:"developerprofile",component:DevprofileComponent},
+  {path:"adminprofile",component:AdminprofileComponent},
   {path:"login",component:LoginComponent},
   {path:"addrole",component:AddRoleComponent},
   {path:"signup",component:SignupComponent},
@@ -62,7 +67,9 @@ const routes: Routes = [
     {path:"dashboard",component:DeveloperDashboardComponent},
     {path:"listtask",component:ListtaskdComponent},
     {path:"edittask/:taskId",component:EditDtaskComponent},
-    {path:"spenttime",component:SpentTimeComponent}
+    {path:"spenttime",component:SpentTimeComponent},
+    {path:"devprofile",component:ProfileDevComponent}
+    
   ],canActivate:[LoginGuard]},
   {path:"projectmanager",component:ProjectmanagerLayoutComponent,children:[
     {path:"dashboard",component:ProjectmanagerDashboardComponent},

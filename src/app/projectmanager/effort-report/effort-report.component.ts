@@ -35,11 +35,28 @@ project:Array<any>=[]
 Status:Array<any>=[]
 ngOnInit(): void {
   let userId=localStorage.getItem("userId")
-  this.projectService.getAllProjectApiByPm(userId).subscribe(resp => {
-    this.project = resp.data;
-    console.log(this.project);
-    
-  })
+  // this.projectService.getAllProjectApiByPm(userId).subscribe(resp => {
+  //   this.project = resp.data;
+  //   console.log(this.project);})
+
+    this.projectService.getAllProjectApiByPm(userId).subscribe(resp => {
+      this.project = resp.data;
+      console.log(this.project);
+      this.dtOptions = {
+  
+        search: {
+          return: true,
+        },
+        dom: 'Bfrtip',
+        buttons: [
+          'copy', 'csv', 'excel', 'pdf', 'print'
+        ],
+        export:true,
+        exportOptions: {
+            rows: ':visible'
+          }
+      }
+    })
 }
 
 }

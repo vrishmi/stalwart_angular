@@ -66,7 +66,6 @@ export class AddTaskComponent {
 
     let isError = false
     
-
     if (this.TaskTitle == "" || this.TaskTitle.trim().length == 0) {
       
       this.TaskTitleError = "Please Enter Task Title"

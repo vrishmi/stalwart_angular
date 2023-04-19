@@ -5,80 +5,43 @@
           <i class="mdi mdi-home"></i>
         </span> Dashboard
       </h3>
-      <nav aria-label="breadcrumb">
-        <ul class="breadcrumb">
-          <li class="breadcrumb-item active" aria-current="page">
-            <span></span>Overview <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i>
-          </li>
-        </ul>
-      </nav>
+     
     </div>
     <div class="row">
-      <div class="col-md-4 stretch-card grid-margin">
-        <div class="card bg-gradient-danger card-img-holder text-white">
+      <div class="col-md-4 grid-margin stretch-card">
+        <div class="card">
           <div class="card-body">
-            <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image">
-            <h4 class="font-weight-normal mb-3">This Month Projects <i class="mdi mdi-chart-line mdi-24px float-right"></i>
-            </h4>
-            <!-- <h2 class="mb-5">{{totalProjects}}</h2> -->
-           <!-- <h6 class="card-text">Increased by 40%</h6>-->
+            <h4 class="card-title float-left">Select Task To Find Remaining Time</h4><br><br>
+            Tasks: <select [(ngModel)]="Task" class="form-control" (change)="getChart()">
+              <option value="-1">Select Task</option>
+              <option *ngFor="let p of tasks"  value="{{p._id}}">{{p.TaskTitle}}</option></select><span class="error"></span>
+            <br>  
+        
+     
+   <canvas id="chart">{{chart}}</canvas>
+   
           </div>
         </div>
       </div>
-      <div class="col-md-4 stretch-card grid-margin">
-        <div class="card bg-gradient-info card-img-holder text-white">
+      <div class="col-md-8 grid-margin stretch-card">
+        <div class="card">
           <div class="card-body">
-            <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image">
-            <h4 class="font-weight-normal mb-3">On-going Projects
-             <i class="mdi mdi-timeline-text-outline mdi-24px float-right"></i>
-            </h4>
-            <!-- <h2 class="mb-5">{{totalonProjects}}</h2> -->
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 stretch-card grid-margin">
-        <div class="card bg-gradient-success card-img-holder text-white">
-          <div class="card-body">
-            <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image">
-            <h4 class="font-weight-normal mb-3">Pipe-line Projects <i class="mdi mdi-timer-sand-full float-right"></i>
-            </h4>
-            <!-- <h2 class="mb-5">{{totalpipeProjects}}</h2> -->
-          </div>
-        </div>
-      </div>
-      
-      <div class="col-md-4 stretch-card grid-margin">
-        <div class="card bg-gradient-success card-img-holder text-white">
-          <div class="card-body">
-            <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image">
-            <h4 class="font-weight-normal mb-3">Total Utilized Hours <i class="mdi mdi-timer-sand-full float-right"></i>
-            </h4>
-            <!-- <h2 class="mb-5">{{totalUti}}</h2> -->
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 stretch-card grid-margin">
-        <div class="card bg-gradient-danger card-img-holder text-white">
-          <div class="card-body">
-            <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image">
-            <h4 class="font-weight-normal mb-3">Completed Projects <i class="mdi mdi-chart-line mdi-24px float-right"></i>
-            </h4>
-            <!-- <h2 class="mb-5">{{totalcompletedProjects}}</h2> -->
-           <!-- <h6 class="card-text">Increased by 40%</h6>-->
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 stretch-card grid-margin">
+            <canvas id="chart1">{{chart1}}</canvas>  
+       </div>
+    </div>
+
+      <!-- <div class="col-md-4 stretch-card grid-margin">
         <div class="card bg-gradient-info card-img-holder text-white">
           <div class="card-body">
             <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image">
             <h4 class="font-weight-normal mb-3">Over-Due Projects
              <i class="mdi mdi-timeline-text-outline mdi-24px float-right"></i>
             </h4>
-            <!-- <h2 class="mb-5">{{totaloverdueProjects}}</h2> -->
+             <h2 class="mb-5">{{totaloverdueProjects}}</h2>
           </div>
         </div>
-      </div>
+      </div> -->
+      
     </div>
    <!-- <div class="row">
       <div class="col-md-12 grid-margin stretch-card">
@@ -94,4 +57,6 @@
       </div>
     </div>-->
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-  </div>
+    
+
+  

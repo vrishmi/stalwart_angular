@@ -14,7 +14,7 @@ export class StatusReportComponent {
   Statuses:Array<any>=[]
   Projects:Array<any>=[]
 
-  dtOptions: any = { }
+  dtoptions: any = {}
 
   constructor(private projectService:ProjectuserService,private router:Router,private tr:ToastrService) {
     let userId=localStorage.getItem("userId")
@@ -22,7 +22,7 @@ export class StatusReportComponent {
       {
         //this.Projects = resp.data; 
         console.log(this.Projects);  
-        this.dtOptions = {
+        this.dtoptions = {
 
           search: {
             return: true,
@@ -31,10 +31,10 @@ export class StatusReportComponent {
           buttons: [
             'copy', 'csv', 'excel', 'pdf', 'print'
           ],
-          export:true,
-          exportOptions: {
-              rows: ':visible'
-            }
+          export:true
+          // exportOptions: {
+          //     rows: ':visible'
+          //   }
         }
       })
    }
@@ -56,11 +56,31 @@ export class StatusReportComponent {
   getProject()
   {
     let userId=localStorage.getItem("userId")
-    this.projectService.getProjectByStatusidApi(userId,this.Status).subscribe(resp => 
-      {
-        this.Projects = resp.data; 
-        console.log(this.Projects);  
-      })
+    // this.projectService.getProjectByStatusidApi(userId,this.Status).subscribe(resp => 
+    //   {
+    //     this.Projects = resp.data; 
+    //     console.log(this.Projects);  
+    //   })
+
+      this.projectService.getProjectByStatusidApi(userId,this.Status).subscribe(resp => 
+        {
+          this.Projects = resp.data; 
+          console.log(this.Projects);  
+          this.dtoptions = {
+  
+            search: {
+              return: true,
+            },
+            dom: 'Bfrtip',
+            buttons: [
+              'copy', 'csv', 'excel', 'pdf', 'print'
+            ],
+            export:true,
+            exportOptions: {
+                rows: ':visible'
+              }
+          }
+        })
   }
   
 }

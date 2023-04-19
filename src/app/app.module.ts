@@ -66,6 +66,10 @@ import { AssigntaskComponent } from './projectmanager/assigntask/assigntask.comp
 import { EditDtaskComponent } from './developer/edit-dtask/edit-dtask.component';
 import { SpentTimeComponent } from './developer/spent-time/spent-time.component';
 import { ProfileComponent } from './profile/profile.component';
+import { ProfileAdminComponent } from './admin/profile-admin/profile-admin.component';
+import { ProfileDevComponent } from './developer/profile-dev/profile-dev.component';
+import { DevprofileComponent } from './devprofile/devprofile.component';
+import { AdminprofileComponent } from './adminprofile/adminprofile.component';
 
 
  
@@ -132,6 +136,10 @@ import { ProfileComponent } from './profile/profile.component';
     EditDtaskComponent,
     SpentTimeComponent,
     ProfileComponent,
+    ProfileAdminComponent,
+    ProfileDevComponent,
+    DevprofileComponent,
+    AdminprofileComponent,
     
    
   ],

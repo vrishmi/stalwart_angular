@@ -55,5 +55,8 @@ export class ProjectService {
   getCompeletedProjectApi():Observable<any> {
     return this.httpClient.get(environment.apiUrl+"/getcompletedprojects")
   }
+  getPendingProjectApi() :Observable<any>{
+    return this.httpClient.get(environment.apiUrl+"/getpendingprojects")
+  }
   
 }
